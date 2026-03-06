@@ -1,0 +1,27 @@
+name: cicd-manual
+
+on:
+  workflow_dispatch: 
+
+jobs:
+
+  Code:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout code
+        run: echo "code Clone ho gaya"
+
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Build code
+       run: echo "code Build ho gaya"
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy code
+        run: echo "code Deploy ho gaya"
+
+
+    
+    
