@@ -22,11 +22,12 @@ jobs:
     steps:
       - name: Deploy code
         run: echo "code Deploy ho gaya"
-details:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checks Docker & Python Version
-        run: docker --version & python --version
+
+show_versions:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Checks Docker & Python Version
+     run: docker --version & python3 --version
 
     
     
