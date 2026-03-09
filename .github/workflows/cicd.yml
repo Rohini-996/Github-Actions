@@ -22,7 +22,6 @@ jobs:
     steps:
       - name: Deploy code
         run: echo "code Deploy ho gaya"
-        
 details:
     runs-on: ubuntu-latest
     steps:
