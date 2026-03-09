@@ -12,11 +12,14 @@ jobs:
         run: echo "code Clone ho gaya"
 
   Build:
+  needs: [Code]
     runs-on: ubuntu-latest
     steps:
      - name: Build code
        run: echo "code Build ho gaya"
+       
   Deploy:
+  needs: [Code, Build]
     runs-on: ubuntu-latest
     steps:
       - name: Deploy code
