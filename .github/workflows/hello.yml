@@ -10,8 +10,8 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
-      - name: Say hello to frnds
-        run: echo "Hello Dosto"
+      - name: Checkout the code 
+        uses: actions/checkout@v4
 
-      - name: Say hello to users
-        run : echo "Hello Users"
+      - name: Say hello to github action
+        run : echo "Hello from GitHub Actions!"
