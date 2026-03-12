@@ -18,8 +18,6 @@ jobs:
     steps:
      - name: Build code
        run: echo "code Build ho gaya"
-     - name: Break pipeline intentionally
-       run: exit 1
        
   Deploy:
     needs: [Code, Build]
