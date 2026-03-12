@@ -4,18 +4,23 @@ on:
   workflow_dispatch: 
 
 jobs:
-# every job needs runner 
+# every job needs runner
+
   Code:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout code
         run: echo "code Clone ho gaya"
+        
   Build:
     needs: [Code]
     runs-on: ubuntu-latest
     steps:
      - name: Build code
        run: echo "code Build ho gaya"
+     - name: Break pipeline intentionally
+       run: exit 1
+       
   Deploy:
     needs: [Code, Build]
     runs-on: ubuntu-latest
