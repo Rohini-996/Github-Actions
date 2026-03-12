@@ -1,8 +1,7 @@
 name: Python lint 
 
 on:
-    push:
-        branch: [main]
+    workflow_dispath
 
 jobs:
     validate:
