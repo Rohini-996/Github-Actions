@@ -1,7 +1,7 @@
 name: cicd-manual
 
 on:
-  workflow_dispatch: 
+    workflow_dispatch: 
 
 jobs:
 # every job needs runner
