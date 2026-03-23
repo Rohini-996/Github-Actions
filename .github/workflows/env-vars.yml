@@ -1,0 +1,30 @@
+name: Enviorment variables setup 
+
+on:
+  workflow_dispathch
+
+env:  # workflow level 
+  APP_NAME: myapp
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest 
+
+
+    env: # Job level
+      ENVIRONMENT: staging 
+
+    steps:
+      - name: print all variables 
+        env:   # step level
+          VERSION: 1.0.0
+        run: |
+          echo "App Name: $APP_NAME"
+          echo "Environment: $ENVIRONMENT"
+          echo "Version: $VERSION"
+
+      - name: print github context variables 
+        run: |
+          echo "commit SHA: ${{ github.sha }}"
+          echo "Triggerred by: ${{ github.actor }}"
+

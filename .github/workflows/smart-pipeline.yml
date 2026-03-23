@@ -1,0 +1,34 @@
+name: smart pipeline
+
+on: 
+  workflow_dispatch 
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Lint step 
+        run: echo "Running lint checks..."
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test step
+        run: echo "Running tests..."
+
+    summary: 
+     runs-on: ubuntu-latest
+     needs: [lint, test]
+
+     steps:
+       - name: Print branch type 
+         run: |
+           if [[ "${GITHUB_REF}" == "refs/heads/main" ]]; then
+             echo "This is a MAIN branch push 🚀"
+           else
+             echo "This is a FEATURE branch push 🌱"
+           fi
+
+       - name: Print commit message
+         run: |
+           echo "Commit message: ${{ github.event.head_commit.message }}"
