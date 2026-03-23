@@ -11,16 +11,16 @@ jobs:
       steps:
         - name: check version
           run: |
-            echo: "Docker Version:"
+            echo "Docker Version:"
             docker --version
 
-            echo: "Git Version:"
+            echo "Git Version:"
             git --version
 
-            echo: "python3 Version:"
+            echo "python3 Version:"
             python3 --version
 
-            echo: "Node Version:"
+            echo "Node Version:"
             node --version 
 
 
