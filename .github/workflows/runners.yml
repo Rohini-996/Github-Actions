@@ -1,0 +1,33 @@
+name: GitHub Hosted Runners Demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+
+  ubuntu-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print runner details
+        run: |
+          echo "Running on Ubuntu"
+          echo "Runner hostname is $(hostname)"
+          echo "Current user is $(whoami)"
+
+  windows-job:
+    runs-on: windows-latest
+    steps:
+      - name: Print runner details
+        run: |
+          echo "Running on Windows"
+          hostname
+          whoami
+
+  macos-job:
+    runs-on: macos-latest
+    steps:
+      - name: Print runner details
+        run: |
+          echo "Running on macOS"
+          echo "Hostname: $(hostname)"
+          echo "User: $(whoami)"

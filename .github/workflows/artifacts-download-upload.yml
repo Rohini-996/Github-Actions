@@ -1,0 +1,35 @@
+name: Artifacts Between Jobs
+
+on:
+  workflow_dispatch 
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: create a file 
+        run: |
+          echo "hello from me!" > msg.txt
+
+      - name: upload artifact 
+        uses: actions/upload-artifact@v4
+        with:
+          name: shared-file
+          path: msg.txt 
+
+   
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1  # ensures job1 runs first
+
+    steps:
+  
+      - name: download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: shared-file
+
+      - name: read file
+        run: cat msg.txt
+
