@@ -16,7 +16,7 @@ jobs:
       - name: Test step
         run: echo "Running tests..."
 
-    summary: 
+  summary: 
      runs-on: ubuntu-latest
      needs: [lint, test]
 
