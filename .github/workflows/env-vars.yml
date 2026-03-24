@@ -1,7 +1,7 @@
 name: Enviorment variables setup 
 
 on:
-  workflow_dispathch
+  workflow_dispatch: 
 
 env:  # workflow level 
   APP_NAME: myapp
