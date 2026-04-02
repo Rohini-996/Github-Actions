@@ -11,7 +11,7 @@ on:
         type: string
         default: staging
     secrets:
-      DOCKER_TOKEN:
+      docker_token:
         required: true
 
 jobs:
@@ -26,4 +26,4 @@ jobs:
         run: echo "Building ${{ inputs.app_name }} for ${{ inputs.environment }}"
 
       - name: Check Docker Token
-        run: echo "Docker token is set:${{ secrets.DOCKER_TOKEN != '' }}"
+        run: echo "Docker token is set:${{ secrets.DOCKER_PASS != '' }}"
