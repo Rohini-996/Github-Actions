@@ -1,0 +1,15 @@
+name: call Reuasble build 
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    uses: ./.github/workflows/reusable-build.yml
+    with:
+      app_name: "my web app"
+      enviornment: "production"
+
+    secrets:
+      docker_token: ${{ secrets.DOCKER_TOKEN }}
+
